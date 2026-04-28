@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --bg3: #18181f;
+  --purple: #7c5cfc;
+  --purple-light: #a78bfa;
+  --pink: #f472b6;
+  --grad: linear-gradient(135deg, #7c5cfc 0%, #f472b6 100%);
+  --border: rgba(255, 255, 255, 0.07);
+  --card: rgba(255, 255, 255, 0.04);
+  --muted: #6b7280;
+  --muted2: #9ca3af;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Gradient text */
+.grad-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Buttons */
+.btn-grad {
+  display: inline-block;
+  background: var(--grad);
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.15s;
+}
+.btn-grad:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-ghost:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Nav link */
+.nav-link {
+  color: var(--muted2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: #fff;
+}
+
+/* Badge dot animation */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.badge-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* Why Us cards — border logic */
+.why-card {
+  background: var(--card);
+  transition: background 0.25s;
+}
+.why-card:hover {
+  background: rgba(124, 92, 252, 0.07);
+}
+@media (min-width: 768px) {
+  .why-card { border-right: 1px solid var(--border); }
+  .why-card:nth-child(3n) { border-right: none; }
+  .why-card:nth-child(-n+3) { border-bottom: 1px solid var(--border); }
+}
+@media (max-width: 767px) {
+  .why-card:not(:last-child) { border-bottom: 1px solid var(--border); }
+}
+
+/* Service / doc card hover */
+.svc-card { transition: border-color 0.2s, transform 0.2s; }
+.svc-card:hover { border-color: rgba(124, 92, 252, 0.3) !important; transform: translateY(-3px); }
+
+.doc-card { transition: border-color 0.2s, transform 0.2s; color: #fff; text-decoration: none; }
+.doc-card:hover { border-color: rgba(124, 92, 252, 0.3) !important; transform: translateY(-3px); }
+.doc-arrow { color: var(--muted); transition: color 0.2s, transform 0.2s; }
+.doc-card:hover .doc-arrow { color: var(--purple-light); transform: translateX(4px); }
+
+/* Store buttons */
+.store-btn { transition: border-color 0.2s; }
+.store-btn:hover { border-color: rgba(124, 92, 252, 0.35) !important; }
+
+/* CTA email */
+.cta-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #fff;
+  text-decoration: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.cta-email:hover {
+  border-color: rgba(124, 92, 252, 0.4) !important;
+  background: rgba(124, 92, 252, 0.1) !important;
+}
+
+/* Social & footer */
+.social-btn { transition: border-color 0.2s; }
+.social-btn:hover { border-color: rgba(124, 92, 252, 0.4) !important; }
+
+.footer-legal-link { color: var(--muted); text-decoration: none; transition: color 0.2s; }
+.footer-legal-link:hover { color: #fff; }
