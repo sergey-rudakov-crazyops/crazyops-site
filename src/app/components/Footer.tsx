@@ -46,12 +46,18 @@ export default function Footer() {
         <p className="text-[12px]" style={{ color: 'var(--muted)' }}>
           © 2026 CrazyOps Ltd. All rights reserved.
         </p>
-        <div className="flex gap-6">
+        <div className="flex gap-6 flex-wrap">
           <a href="#docs" className="footer-legal-link text-[12px]">
             Privacy Policy
           </a>
+          <a href="/privacy-policy-apps" className="footer-legal-link text-[12px]">
+            Privacy Policy for Apps
+          </a>
           <a href="#docs" className="footer-legal-link text-[12px]">
             Terms of Use
+          </a>
+          <a href="/terms-of-use-apps" className="footer-legal-link text-[12px]">
+            Terms of Use for Apps
           </a>
         </div>
       </div>
