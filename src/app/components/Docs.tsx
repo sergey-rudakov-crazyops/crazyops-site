@@ -6,6 +6,7 @@ const docs = [
     title: 'Privacy Policy',
     desc: 'How we collect, use, and protect your personal data across all CrazyOps products. GDPR & CCPA compliant.',
     chips: ['PDF', 'Updated Jan 2026', 'GDPR'],
+    href: '/privacy-policy',
   },
   {
     icon: '📋',
@@ -14,22 +15,25 @@ const docs = [
     title: 'Terms of Use',
     desc: 'Rules and responsibilities for using our apps, platforms, and services. Plain language, no legalese traps.',
     chips: ['PDF', 'Updated Jan 2026', 'All regions'],
+    href: '/terms-of-use',
   },
   {
-    icon: '🍎',
+    icon: '📱',
     iconBg: 'rgba(20,184,166,0.15)',
-    label: 'App Store · Apple',
-    title: 'iOS App Privacy Policy',
-    desc: 'Required Apple App Store disclosure — data types collected, usage, and third-party SDKs used in our iOS apps.',
-    chips: ['PDF', 'App Store compliant', 'iOS 17+'],
+    label: 'App Stores · iOS & Android',
+    title: 'App Privacy Policy',
+    desc: 'Required App Store and Google Play disclosure — data types collected, third-party SDKs, and retention periods across our mobile apps.',
+    chips: ['Updated May 2026', 'App Store + Play Store', 'iOS & Android'],
+    href: '/privacy-policy-apps',
   },
   {
-    icon: '🤖',
+    icon: '📄',
     iconBg: 'rgba(251,191,36,0.15)',
-    label: 'Google Play · Android',
-    title: 'Android App Privacy Policy',
-    desc: 'Google Play Store required disclosure — data safety section, permissions rationale, and retention periods.',
-    chips: ['PDF', 'Play Store compliant', 'Android 12+'],
+    label: 'For App Users',
+    title: 'Terms of Use for Apps',
+    desc: 'Rules and responsibilities for using our mobile applications across iOS and Android — subscriptions, in-app purchases, and acceptable use.',
+    chips: ['Updated May 2026', 'iOS & Android'],
+    href: '/terms-of-use-apps',
   },
 ];
 
@@ -65,10 +69,10 @@ export default function Docs() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
-          {docs.map(({ icon, iconBg, label, title, desc, chips }) => (
+          {docs.map(({ icon, iconBg, label, title, desc, chips, href }) => (
             <a
               key={title}
-              href="#"
+              href={href}
               className="doc-card flex items-start gap-5 p-7 rounded-2xl"
               style={{ border: '1px solid var(--border)', background: 'var(--card)' }}
             >
