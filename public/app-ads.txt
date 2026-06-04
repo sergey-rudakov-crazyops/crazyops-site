@@ -1,4 +1,4 @@
-﻿#facebook
+#facebook
 facebook.com, 250509672359476, RESELLER, c3e20eee3f780d68
 
 #Admob
