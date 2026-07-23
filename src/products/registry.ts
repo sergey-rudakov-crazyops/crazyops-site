@@ -28,6 +28,13 @@ export type Product = {
 };
 
 export const products = {
+  dawndrill: {
+    name: 'Dawndrill',
+    privacyPolicyId: 'abbc870d-d3e7-43e7-a863-d2a49b9d2cd5',
+    termsOfUseId: 'a9317703-462c-4037-8bde-4d6795736b7b',
+    supportEmail: 'development@crazyops.io',
+    supportResponseTime: 'We usually respond within 1-3 business days.',
+  },
   quietkin: {
     name: 'Quietkin',
     // TODO: replace with QuietKin's real Termly policy IDs.

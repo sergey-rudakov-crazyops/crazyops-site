@@ -37,6 +37,21 @@ const docs = [
   },
 ];
 
+const appDocs = [
+  {
+    label: 'Dawndrill App',
+    title: 'Dawndrill Privacy Policy',
+    desc: 'Privacy details for Dawndrill users.',
+    href: '/products/dawndrill/privacy-policy',
+  },
+  {
+    label: 'Dawndrill App',
+    title: 'Dawndrill Terms of Use',
+    desc: 'Rules and responsibilities for using Dawndrill.',
+    href: '/products/dawndrill/terms-of-use',
+  },
+];
+
 function Chip({ label }: { label: string }) {
   return (
     <span
@@ -102,6 +117,43 @@ export default function Docs() {
               <div className="doc-arrow text-lg shrink-0 self-center">↗</div>
             </a>
           ))}
+        </div>
+
+        <div className="mb-10">
+          <div className="mb-5">
+            <span
+              className="text-[11px] font-bold uppercase tracking-[0.12em] mb-2 block"
+              style={{ color: 'var(--muted)' }}
+            >
+              App-Specific Documents
+            </span>
+            <h3 className="text-[20px] font-extrabold">Dawndrill legal docs</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {appDocs.map(({ label, title, desc, href }) => (
+              <a
+                key={title}
+                href={href}
+                className="doc-card flex items-start justify-between gap-5 p-6 rounded-2xl"
+                style={{ border: '1px solid var(--border)', background: 'var(--card)' }}
+              >
+                <div>
+                  <div
+                    className="text-[11px] font-bold uppercase tracking-[0.12em] mb-[6px]"
+                    style={{ color: 'var(--muted)' }}
+                  >
+                    {label}
+                  </div>
+                  <div className="text-base font-extrabold mb-2">{title}</div>
+                  <div className="text-[13px] leading-[1.55]" style={{ color: 'var(--muted2)' }}>
+                    {desc}
+                  </div>
+                </div>
+                <div className="doc-arrow text-lg shrink-0 self-center">↗</div>
+              </a>
+            ))}
+          </div>
         </div>
 
         {/* Store badges */}
